@@ -1,0 +1,27 @@
+[build]
+  # Deploy ONLY the static frontend from /static
+  # This avoids Netlify trying to install Python deps (TensorFlow isn't available for Python 3.14 in Netlify builds).
+  base = "static"
+  publish = "."
+  command = "echo \"Deploying static frontend only\""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+[build]
+  command = "echo 'No build step required'"
+  publish = "static"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  PYTHON_VERSION = "3.11.9"
+  NODE_VERSION = "18"
+
+# Note: For ML models, consider using Netlify Functions or a separate backend service
+# The models are too large for standard Netlify Functions (50MB limit)
+# Recommended: Deploy backend separately on Railway, Render, or Heroku
