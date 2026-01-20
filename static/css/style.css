@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --bg-card: #0f3460;
+    --accent: #e94560;
+    --accent-hover: #ff6b85;
+    --text-primary: #ffffff;
+    --text-secondary: #b8b8d4;
+    --border: #2a2a3e;
+    --success: #4ade80;
+    --warning: #fbbf24;
+    --error: #ef4444;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+/* Cards */
+.card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-header h2 {
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.card-body {
+    padding: 15px 20px;
+}
+
+/* Input/Output Text Areas */
+.text-input,
+.text-output {
+    width: 100%;
+    padding: 15px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: 'Segoe UI', sans-serif;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.text-input:focus {
+    border: 2px solid var(--accent);
+}
+
+.text-output {
+    min-height: 150px;
+    cursor: default;
+}
+
+.text-input::placeholder,
+.text-output::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+/* Language Select */
+.language-select {
+    width: 100%;
+    padding: 12px 15px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: 'Segoe UI', sans-serif;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.language-select:focus {
+    border: 2px solid var(--accent);
+}
+
+.language-select option {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+/* Buttons */
+.button-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--text-primary);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+.btn-secondary:hover {
+    background: var(--border);
+    color: var(--text-primary);
+}
+
+/* Status Message */
+.status-message {
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    font-size: 11px;
+    text-align: left;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+}
+
+.status-message.success {
+    color: var(--success);
+    background: rgba(74, 222, 128, 0.1);
+}
+
+.status-message.error {
+    color: var(--error);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.status-message.warning {
+    color: var(--warning);
+    background: rgba(251, 191, 36, 0.1);
+}
+
+.status-message.loading {
+    color: var(--accent);
+    background: rgba(233, 69, 96, 0.1);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    color: var(--text-secondary);
+    font-size: 9px;
+    margin-top: 20px;
+}
+
+/* Loading Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .title {
+        font-size: 24px;
+    }
+    
+    .subtitle {
+        font-size: 10px;
+    }
+    
+    .button-section {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}

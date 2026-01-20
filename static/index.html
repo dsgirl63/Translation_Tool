@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 AI Language Translator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">🌍 AI Language Translator</h1>
+            <p class="subtitle">Powered by Deep Learning • Translate between English, French & Spanish</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Card -->
+            <div class="card input-card">
+                <div class="card-header">
+                    <h2>📝 Enter Text to Translate</h2>
+                </div>
+                <div class="card-body">
+                    <textarea 
+                        id="textInput" 
+                        class="text-input" 
+                        placeholder="Type your text here..."
+                        rows="5"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- Language Selection Card -->
+            <div class="card lang-card">
+                <div class="card-header">
+                    <h2>🌐 Select Target Language</h2>
+                </div>
+                <div class="card-body">
+                    <select id="languageSelect" class="language-select">
+                        <option value="">-- Select Language --</option>
+                        <option value="French">🇫🇷 French</option>
+                        <option value="Spanish">🇪🇸 Spanish</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Button Section -->
+            <div class="button-section">
+                <button id="translateBtn" class="btn btn-primary">
+                    🚀 Translate
+                </button>
+                <button id="clearBtn" class="btn btn-secondary">
+                    🗑️ Clear
+                </button>
+            </div>
+
+            <!-- Status Message -->
+            <div id="statusMessage" class="status-message">
+                ✨ Ready to translate
+            </div>
+
+            <!-- Output Card -->
+            <div class="card output-card">
+                <div class="card-header">
+                    <h2>📄 Translation Result</h2>
+                </div>
+                <div class="card-body">
+                    <textarea 
+                        id="translationOutput" 
+                        class="text-output" 
+                        readonly
+                        placeholder="Translation will appear here..."
+                        rows="8"
+                    ></textarea>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ❤️ using TensorFlow & Keras</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
